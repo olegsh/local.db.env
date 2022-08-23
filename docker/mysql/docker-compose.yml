@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  
+  db:
+    container_name: mysql_container
+    image: mysql:latest
+    restart: always
+
+    environment:
+      MYSQL_DATABASE: 'wings'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+
+    ports:
+      # <port exposed> : <mysql port running inside the container>
+      - '3306:3306'
+
+    expose:
+      # opens port 3306 on the container
+      - '3306'
+
+    # where our data will be persisted
+    volumes:
+      - my-db:/var/lib/mysql
+
+# names of our volume
+volumes:
+  my-db:
