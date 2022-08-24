@@ -1,2 +1,2 @@
-### Docker files to spil local databases
+### Docker files to spin local databases
 #### docker environments
